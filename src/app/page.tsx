@@ -7,6 +7,7 @@ import { DepthSection } from "@/components/sections/DepthSection";
 import { useLanguageStore } from "@/lib/i18n/store";
 import { translations } from "@/lib/i18n/translations";
 import { DecorativeElement } from "@/components/ui/DecorativeElement";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const { language } = useLanguageStore();
@@ -20,12 +21,20 @@ export default function Home() {
     'transition'
   ] as const;
 
+  const thanksText = {
+    pt: "Obrigado a todos pela atenção!",
+    en: "Thank you all for your attention!",
+    es: "¡Gracias a todos por su atención!",
+    it: "Grazie a tutti por l'attenzione!",
+    zh: "感谢大家的关注！"
+  };
+
   return (
     <main className="bg-black text-foreground relative overflow-hidden">
       <DecorativeElement type="line" />
 
       {/* Intro Section */}
-      <ScrollSection id="intro" className="bg-stone-950">
+      <ScrollSection id="intro" className="bg-stone-950/20">
         <DecorativeElement type="circle" />
         <Intro />
       </ScrollSection>
@@ -35,7 +44,7 @@ export default function Home() {
         <ScrollSection
           key={key}
           id={key}
-          className={index % 2 === 0 ? "bg-black" : "bg-stone-950"}
+          className={index % 2 === 0 ? "bg-black/10" : "bg-stone-950/30"}
         >
           <NarrativeSection sectionKey={key} index={index + 1} />
         </ScrollSection>
@@ -55,14 +64,29 @@ export default function Home() {
       </DepthSection>
 
       {/* Conclusion */}
-      <ScrollSection id="conclusion" className="bg-stone-950">
+      <ScrollSection id="conclusion" className="bg-stone-950/40">
         <NarrativeSection sectionKey="conclusion" index={9} />
       </ScrollSection>
 
+      {/* Final Message */}
+      <ScrollSection id="thanks" className="bg-black">
+        <motion.div
+          className="text-center section-content"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.5 }}
+        >
+          <h2 className="text-4xl md:text-7xl font-serif text-accent mb-4">
+            {thanksText[language as keyof typeof thanksText]}
+          </h2>
+          <div className="w-24 h-[1px] bg-accent/40 mx-auto mt-8" />
+        </motion.div>
+      </ScrollSection>
+
       {/* Footer */}
-      <footer className="py-20 text-center border-t border-stone-900 bg-stone-950">
-        <p className="text-stone-600 font-sans text-sm tracking-widest uppercase">
-          © {new Date().getFullYear()} Proto-Genetics — Interactive Experience
+      <footer className="py-20 text-center border-t border-stone-900 bg-stone-950/50">
+        <p className="text-stone-600 font-sans text-[10px] tracking-[0.5em] uppercase">
+          © {new Date().getFullYear()} Proto-Genetics — Interactive School Project
         </p>
       </footer>
     </main>
