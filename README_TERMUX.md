@@ -1,33 +1,35 @@
 # 📱 Guia de Execução no Termux
 
-O Termux pode apresentar erros ao tentar baixar os binários otimizados do Next.js (SWC). Siga estes passos para garantir que o projeto rode corretamente.
+**⚠️ AVISO CRÍTICO: Não execute o projeto em `/storage/emulated/0/` (pastas do sistema Android).**
+O Android não permite a criação de "symlinks" no armazenamento compartilhado, o que causa o erro `EACCES: permission denied, symlink` durante o `npm install`.
 
-## 1. Preparação do Ambiente
-```bash
-pkg update && pkg upgrade
-pkg install nodejs-lts git
-```
-*Recomendo usar o `nodejs-lts` para maior estabilidade.*
+## 1. Como Corrigir o Erro de Permissão (EACCES)
+Você deve mover o projeto para a pasta interna do Termux. Execute estes comandos:
 
-## 2. Instalação do Projeto
 ```bash
+# Vá para a pasta home real do Termux
+cd ~
+
+# Clone o repositório aqui (onde as permissões funcionam)
 git clone https://github.com/whesley264-oss/before-mendel.git
 cd before-mendel
+
+# Agora o install funcionará
 npm install
 ```
 
-## 3. Resolvendo o erro de SWC (O MAIS IMPORTANTE)
-Se ao rodar `npm run dev` você vir um erro como `Error: request failed with status 404` ao baixar o `@next/swc-android`, você precisa instalar o binário manualmente:
+## 2. Resolvendo o erro de SWC (Binário 404)
+Se ao rodar `npm run dev` você vir um erro de `Failed to download swc package`, instale o binário manualmente:
 
 ```bash
 # Para a maioria dos celulares modernos:
 npm install @next/swc-android-arm64
 
-# Se o seu celular for mais antigo:
+# Se o seu celular for antigo:
 npm install @next/swc-android-arm-eabi
 ```
 
-## 4. Iniciar o Servidor
+## 3. Iniciar o Servidor
 ```bash
 npm run dev
 ```
@@ -35,14 +37,11 @@ Acesse em: `http://localhost:3000`
 
 ---
 
-### 💡 Dica de Performance (Recomendado):
-O modo de desenvolvimento (`dev`) no Termux pode travar ou ficar lento. Para ter a experiência **cinematográfica e fluida** que o projeto oferece, use o modo de produção:
+### 💡 Dica de Performance:
+O modo `dev` no Termux pode ser pesado. Para uma experiência **fluida e cinematográfica**, use o modo otimizado:
 
 ```bash
-# Compila o projeto (otimiza tudo)
 npm run build
-
-# Inicia o servidor otimizado
 npm run start
 ```
 Acesse em: `http://localhost:3000`
