@@ -1,6 +1,6 @@
 # 📱 Guia de Execução no Termux
 
-Como você está usando o Termux, aqui estão os passos exatos para rodar o projeto localmente antes de fazer o deploy.
+Como você está usando o Termux, aqui estão os passos exatos para rodar o projeto localmente.
 
 ## 1. Instalar Dependências do Sistema
 Certifique-se de que o Node.js e o Git estão instalados no seu Termux:
@@ -9,37 +9,46 @@ pkg update && pkg upgrade
 pkg install nodejs git
 ```
 
-## 2. Clonar o Repositório (se ainda não fez)
+## 2. Clonar o Repositório
 ```bash
 git clone https://github.com/whesley264-oss/before-mendel.git
 cd before-mendel
 ```
 
 ## 3. Instalar Dependências do Projeto
-O erro `next: not found` acontece porque as dependências ainda não foram baixadas para a pasta `node_modules`. Execute:
 ```bash
 npm install
 ```
-*Isso pode demorar alguns minutos dependendo da sua conexão e do dispositivo.*
 
-## 4. Iniciar o Servidor de Desenvolvimento
+## 4. Corrigindo o erro de SWC (Binário não encontrado)
+O erro `failed to download swc package` acontece porque o Next.js tenta baixar um binário otimizado que às vezes não está disponível para a arquitetura do Android no NPM.
+
+**A solução é forçar o Next.js a usar o interpretador Rust que já vem no pacote ou desativar o Turbopack se necessário.**
+
+No seu `package.json`, eu já configurei versões mais estáveis (Next.js 15). Se o erro persistir ao rodar `npm run dev`, tente o seguinte:
+
 ```bash
+# Rode sem o Turbopack (padrão)
 npm run dev
 ```
 
-## 5. Acessar o Site
-O Next.js iniciará o servidor em: `http://localhost:3000`
+Se ainda assim der erro de SWC, tente instalar o binário manualmente no Termux:
+```bash
+npm install @next/swc-android-arm64
+```
+*(Ou arm-eabi se o seu celular for mais antigo)*
 
-Abra o navegador do seu celular (Chrome, Firefox, etc) e digite o endereço acima.
+## 5. Iniciar o Servidor
+```bash
+npm run dev
+```
+Acesse em: `http://localhost:3000`
 
 ---
 
-### 💡 Dicas para Termux:
-
-- **Performance:** Se o site parecer lento no celular durante o desenvolvimento, tente rodar a versão de produção (que é muito mais rápida):
-  ```bash
-  npm run build
-  npm run start
-  ```
-- **Portas:** Se a porta `3000` estiver ocupada, o Next.js tentará a `3001`, `3002`, etc. Fique atento ao log no terminal.
-- **Armazenamento:** Garanta que você deu permissão de armazenamento ao Termux para evitar erros de leitura/escrita: `termux-setup-storage`.
+### 💡 Dicas de Performance:
+No Termux, o modo `dev` pode ser pesado. Recomendo rodar o build otimizado para uma experiência fluida:
+```bash
+npm run build
+npm run start
+```
