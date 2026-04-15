@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-export type Theme = 'parchment' | 'midnight' | 'copper' | 'forest';
+export type Theme = 'parchment' | 'midnight' | 'copper' | 'forest' | 'royal' | 'ocean' | 'blood' | 'ethereal' | 'void';
 
 interface ThemeState {
   theme: Theme;

@@ -5,7 +5,7 @@ import { useLanguageStore } from '@/lib/i18n/store';
 import { translations } from '@/lib/i18n/translations';
 import { motion } from 'framer-motion';
 
-const students = ["Whesley", "Kaue", "Raul", "Adriano", "Eduardo"];
+const students = ["Whesley", "Raul", "Adriano", "Eduardo"];
 
 export const Intro = () => {
   const { language } = useLanguageStore();
@@ -23,20 +23,33 @@ export const Intro = () => {
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-accent to-transparent opacity-50" />
         <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-accent to-transparent opacity-50" />
 
-        <span className="text-[10px] uppercase tracking-[0.6em] text-accent block mb-6 opacity-80 font-bold">Apresentado por</span>
-        <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-3">
-          {students.map((name, i) => (
-            <motion.span
-              key={name}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 + (i * 0.1), duration: 0.8 }}
-              className="text-lg md:text-xl font-serif italic text-white/90 relative group"
-            >
-              <span className="relative z-10">{name}</span>
-              <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent transition-all duration-300 group-hover:w-full" />
-            </motion.span>
-          ))}
+        <div className="mb-6">
+          <span className="text-[10px] uppercase tracking-[0.6em] text-accent block mb-2 opacity-80 font-bold">Apresentado por</span>
+          <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-3">
+            {students.map((name, i) => (
+              <motion.span
+                key={name}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 + (i * 0.1), duration: 0.8 }}
+                className="text-lg md:text-xl font-serif italic text-white/90 relative group"
+              >
+                <span className="relative z-10">{name}</span>
+                <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent transition-all duration-300 group-hover:w-full" />
+              </motion.span>
+            ))}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 pt-6 border-t border-accent/10">
+          <div>
+            <span className="text-[8px] uppercase tracking-[0.4em] text-accent/60 block mb-1">Instituição</span>
+            <span className="text-sm font-sans font-medium text-white/80">Colégio Municipal Paulo Magalhães</span>
+          </div>
+          <div>
+            <span className="text-[8px] uppercase tracking-[0.4em] text-accent/60 block mb-1">Professor</span>
+            <span className="text-sm font-sans font-medium text-white/80">Jaimilton</span>
+          </div>
         </div>
       </motion.div>
 
@@ -72,27 +85,26 @@ export const Intro = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 2.2 }}
-        className="grid grid-cols-2 md:grid-cols-5 gap-6 text-[10px] uppercase tracking-[0.3em] text-accent/50 w-full max-w-3xl border-t border-accent/20 pt-8"
+        className="w-full max-w-4xl mt-8"
       >
-        <div className="flex flex-col gap-2 group cursor-default">
-          <span className="text-accent/60 transition-colors group-hover:text-accent">01</span>
-          <span className="transition-colors group-hover:text-white">Contexto</span>
-        </div>
-        <div className="flex flex-col gap-2 group cursor-default">
-          <span className="text-accent/60 transition-colors group-hover:text-accent">02</span>
-          <span className="transition-colors group-hover:text-white">Filosofia</span>
-        </div>
-        <div className="flex flex-col gap-2 group cursor-default">
-          <span className="text-accent/60 transition-colors group-hover:text-accent">03</span>
-          <span className="transition-colors group-hover:text-white">Teorias</span>
-        </div>
-        <div className="flex flex-col gap-2 group cursor-default">
-          <span className="text-accent/60 transition-colors group-hover:text-accent">04</span>
-          <span className="transition-colors group-hover:text-white">Mendel</span>
-        </div>
-        <div className="flex flex-col gap-2 group cursor-default">
-          <span className="text-accent/60 transition-colors group-hover:text-accent">05</span>
-          <span className="transition-colors group-hover:text-white">Conclusão</span>
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+          {[
+            { id: "01", label: "Contexto", desc: "A origem do pensamento" },
+            { id: "02", label: "Filosofia", desc: "Hipócrates e Aristóteles" },
+            { id: "03", label: "Teorias", desc: "Pré-formismo e Epigênese" },
+            { id: "04", label: "Mendel", desc: "A revolução científica" },
+            { id: "05", label: "Conclusão", desc: "O legado eterno" }
+          ].map((item, i) => (
+            <motion.div
+              key={item.id}
+              whileHover={{ y: -5, backgroundColor: "rgba(var(--accent-rgb), 0.1)" }}
+              className="flex flex-col p-4 border border-accent/20 bg-accent/5 rounded-sm transition-all group cursor-default"
+            >
+              <span className="text-accent font-bold mb-2 text-xs">{item.id}</span>
+              <span className="text-white text-[10px] uppercase tracking-widest mb-1 group-hover:text-accent transition-colors font-bold">{item.label}</span>
+              <span className="text-[9px] text-stone-500 lowercase italic opacity-0 group-hover:opacity-100 transition-opacity">{item.desc}</span>
+            </motion.div>
+          ))}
         </div>
       </motion.div>
 

@@ -19,6 +19,11 @@ const themes = [
   { id: 'midnight', name: 'Midnight Blue', color: '#3b82f6' },
   { id: 'copper', name: 'Copper Ink', color: '#e24a20' },
   { id: 'forest', name: 'Ancient Forest', color: '#22c55e' },
+  { id: 'royal', name: 'Royal Gold', color: '#fcd34d' },
+  { id: 'ocean', name: 'Deep Ocean', color: '#0ea5e9' },
+  { id: 'blood', name: 'Crimson Blood', color: '#dc2626' },
+  { id: 'ethereal', name: 'Ethereal Purple', color: '#a855f7' },
+  { id: 'void', name: 'Perfect Void', color: '#d1d5db' },
 ] as const;
 
 export const Navbar = () => {
