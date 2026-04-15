@@ -62,6 +62,30 @@ export const translations = {
         title: 'O Legado da Busca',
         subtitle: 'Da Sombra à Luz',
         content: 'Entender o passado nos faz valorizar a clareza do presente. A genética moderna é o resultado de milênios de dúvidas e séculos de coragem intelectual.',
+      },
+      timeline: {
+        title: 'Linha do Tempo',
+        subtitle: 'A Evolução do Pensamento',
+        events: [
+          { year: 'Antiguidade', title: 'Hipócrates', desc: 'Pangênese: sementes de todas as partes do corpo.' },
+          { year: 'Antiguidade', title: 'Aristóteles', desc: 'Pai dá a forma, mãe dá a matéria.' },
+          { year: '1759', title: 'Wolff', desc: 'Epigênese: órgãos se formam do zero.' },
+          { year: '1809', title: 'Lamarck', desc: 'Uso e desuso mudam o corpo.' },
+          { year: '1839', title: 'Schleiden & Schwann', desc: 'Surgimento da Biologia Celular.' },
+          { year: '1892', title: 'Weismann', desc: 'Continuidade do Germ-Plasm.' }
+        ]
+      },
+      laws: {
+        title: 'As Leis de Mendel',
+        subtitle: 'A Matemática da Vida',
+        law1: {
+          title: '1ª Lei: Segregação',
+          desc: 'Cada característica é determinada por dois fatores que se separam na formação dos gametas.'
+        },
+        law2: {
+          title: '2ª Lei: Segregação Independente',
+          desc: 'Os fatores para duas ou mais características se distribuem independentemente para os gametas.'
+        }
       }
     }
   },
@@ -128,6 +152,30 @@ export const translations = {
         title: 'The Legacy of the Quest',
         subtitle: 'From Shadow to Light',
         content: 'Understanding the past makes us value the clarity of the present. Modern genetics is the result of millennia of doubts and centuries of intellectual courage.',
+      },
+      timeline: {
+        title: 'Timeline',
+        subtitle: 'The Evolution of Thought',
+        events: [
+          { year: 'Ancient', title: 'Hippocrates', desc: 'Pangenesis: seeds from all parts of the body.' },
+          { year: 'Ancient', title: 'Aristotle', desc: 'Father gives form, mother gives matter.' },
+          { year: '1759', title: 'Wolff', desc: 'Epigenesis: organs form from scratch.' },
+          { year: '1809', title: 'Lamarck', desc: 'Use and disuse change the body.' },
+          { year: '1839', title: 'Schleiden & Schwann', desc: 'Emergence of Cell Biology.' },
+          { year: '1892', title: 'Weismann', desc: 'Germ-Plasm Continuity.' }
+        ]
+      },
+      laws: {
+        title: 'Mendel\'s Laws',
+        subtitle: 'The Mathematics of Life',
+        law1: {
+          title: '1st Law: Segregation',
+          desc: 'Each trait is determined by two factors that separate during gamete formation.'
+        },
+        law2: {
+          title: '2nd Law: Independent Assortment',
+          desc: 'Factors for two or more traits distribute independently to gametes.'
+        }
       }
     }
   },
@@ -194,6 +242,30 @@ export const translations = {
         title: 'El Legado de la Búsqueda',
         subtitle: 'De la Sombra a la Luz',
         content: 'Comprender el pasado nos hace valorar la claridad del presente. La genética moderna es el resultado de milenios de dudas y siglos de coraje intelectual.',
+      },
+      timeline: {
+        title: 'Línea de Tiempo',
+        subtitle: 'La Evolución del Pensamiento',
+        events: [
+          { year: 'Antigüedad', title: 'Hipócrates', desc: 'Pangénesis: semillas de todas las partes del cuerpo.' },
+          { year: 'Antigüedad', title: 'Aristóteles', desc: 'El padre da la forma, la madre la materia.' },
+          { year: '1759', title: 'Wolff', desc: 'Epigénesis: los órganos se forman desde cero.' },
+          { year: '1809', title: 'Lamarck', desc: 'El uso y desuso cambian el cuerpo.' },
+          { year: '1839', title: 'Schleiden & Schwann', desc: 'Surgimiento de la Biología Celular.' },
+          { year: '1892', title: 'Weismann', desc: 'Continuidad del Germ-Plasm.' }
+        ]
+      },
+      laws: {
+        title: 'Las Leyes de Mendel',
+        subtitle: 'La Matemática de la Vida',
+        law1: {
+          title: '1ª Ley: Segregación',
+          desc: 'Cada característica está determinada por dos factores que se separan en la formación de los gametos.'
+        },
+        law2: {
+          title: '2ª Ley: Segregación Independiente',
+          desc: 'Los factores de dos o más características se distribuyen independientemente a los gametos.'
+        }
       }
     }
   },
@@ -260,6 +332,30 @@ export const translations = {
         title: 'L\'Eredità della Ricerca',
         subtitle: 'Dall\'Ombra alla Luce',
         content: 'Capire il passato ci fa apprezzare la chiarezza del presente. La genetica moderna è il risultato di millenni di dubbi e secoli di coraggio intellettuale.',
+      },
+      timeline: {
+        title: 'Cronologia',
+        subtitle: 'L\'Evoluzione del Pensiero',
+        events: [
+          { year: 'Antichità', title: 'Ippocrate', desc: 'Pangenesi: semi da tutte le parti del corpo.' },
+          { year: 'Antichità', title: 'Aristotele', desc: 'Il padre dà la forma, la madre la materia.' },
+          { year: '1759', title: 'Wolff', desc: 'Epigenesi: gli organi si formano da zero.' },
+          { year: '1809', title: 'Lamarck', desc: 'Uso e disuso cambiano il corpo.' },
+          { year: '1839', title: 'Schleiden & Schwann', desc: 'Nascita della Biologia Cellulare.' },
+          { year: '1892', title: 'Weismann', desc: 'Continuità del Germ-Plasm.' }
+        ]
+      },
+      laws: {
+        title: 'Le Leggi di Mendel',
+        subtitle: 'La Matematica della Vita',
+        law1: {
+          title: '1ª Legge: Segregazione',
+          desc: 'Ogni caratteristica è determinata da due fattori che si separano nella formazione dei gameti.'
+        },
+        law2: {
+          title: '2ª Legge: Segregazione Indipendente',
+          desc: 'I fattori per due o più caratteristiche si distribuiscono indipendentemente ai gameti.'
+        }
       }
     }
   },
@@ -326,6 +422,30 @@ export const translations = {
         title: '探索的遗产',
         subtitle: '从阴影到光明',
         content: '了解过去让我们珍惜现在的清晰。现代遗传学是数千年怀疑和数世纪理智勇气的结晶。',
+      },
+      timeline: {
+        title: '时间轴',
+        subtitle: '思想的演变',
+        events: [
+          { year: '古代', title: '希波克拉底', desc: '泛生论：来自全身各处的种子。' },
+          { year: '古代', title: '亚里士多德', desc: '父亲提供形式，母亲提供物质。' },
+          { year: '1759', title: '沃尔夫', desc: '渐成论：器官从零开始形成。' },
+          { year: '1809', title: '拉马克', desc: '用进废退改变身体。' },
+          { year: '1839', title: '施莱登与施旺', desc: '细胞生物学的诞生。' },
+          { year: '1892', title: '魏斯曼', desc: '种质延续论。' }
+        ]
+      },
+      laws: {
+        title: '孟德尔定律',
+        subtitle: '生命的数学',
+        law1: {
+          title: '第一定律：分离定律',
+          desc: '每个特征由两个因子决定，这两个因子在配子形成过程中分离。'
+        },
+        law2: {
+          title: '第二定律：自由组合定律',
+          desc: '两个或更多特征的因子独立地分配到配子中。'
+        }
       }
     }
   }

@@ -5,6 +5,8 @@ import { Intro } from "@/components/sections/Intro";
 import { NarrativeSection } from "@/components/sections/NarrativeSection";
 import { CarouselSection } from "@/components/sections/CarouselSection";
 import { DepthSection } from "@/components/sections/DepthSection";
+import { TimelineSection } from "@/components/sections/TimelineSection";
+import { MendelLawsSection } from "@/components/sections/MendelLawsSection";
 import { useLanguageStore } from "@/lib/i18n/store";
 import { translations } from "@/lib/i18n/translations";
 import { DecorativeElement } from "@/components/ui/DecorativeElement";
@@ -21,9 +23,9 @@ export default function Home() {
   ] as const;
 
   const carouselImages = [
-    "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=800",
-    "https://images.unsplash.com/photo-1503387762-592dea58ef21?auto=format&fit=crop&q=80&w=800",
-    "https://images.unsplash.com/photo-1516339901600-2e1a62dc0c45?auto=format&fit=crop&q=80&w=800",
+    "/assets/images/IMG_20260414_220526_743.jpg",
+    "/assets/images/IMG_20260414_220523_695.jpg",
+    "/assets/images/IMG_20260414_220521_354.jpg",
   ];
 
   return (
@@ -53,6 +55,10 @@ export default function Home() {
         images={carouselImages}
       />
 
+      <ScrollSection id="timeline" className="bg-stone-950/20">
+        <TimelineSection />
+      </ScrollSection>
+
       <ScrollSection id="confusions" className="bg-black/20">
         <NarrativeSection sectionKey="confusions" index={7} />
       </ScrollSection>
@@ -69,6 +75,10 @@ export default function Home() {
           <NarrativeSection sectionKey="mendel" index={8} />
         </div>
       </DepthSection>
+
+      <ScrollSection id="mendel-laws" className="bg-stone-950/30">
+        <MendelLawsSection />
+      </ScrollSection>
 
       {/* Conclusion */}
       <ScrollSection id="conclusion" className="bg-stone-950/40">

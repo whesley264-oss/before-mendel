@@ -10,15 +10,15 @@ interface NarrativeSectionProps {
 }
 
 const sectionImages: Record<string, string> = {
-  ancient: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=800", // Ancient light/mystical
-  philosophers: "https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=800", // Old books
-  preScientific: "https://images.unsplash.com/photo-1532187863486-abf9d3c3236e?auto=format&fit=crop&q=80&w=800", // Scientific sketch
-  observations: "https://images.unsplash.com/photo-159742324403d-d19504ba2b3b?auto=format&fit=crop&q=80&w=800", // Dried plants
-  limitations: "https://images.unsplash.com/photo-1516339901600-2e1a62dc0c45?auto=format&fit=crop&q=80&w=800", // Dark room/candle
-  confusions: "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=800", // Abstract patterns
-  transition: "https://images.unsplash.com/photo-1503387762-592dea58ef21?auto=format&fit=crop&q=80&w=800", // Renaissance architecture
-  mendel: "https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?auto=format&fit=crop&q=80&w=800", // Peas/Garden
-  conclusion: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&q=80&w=800", // Modern lab
+  ancient: "/assets/images/IMG_20260414_235408_022.jpg",
+  philosophers: "/assets/images/IMG_20260414_235244_508.jpg",
+  preScientific: "/assets/images/photo-1576086213369-97a306d36557.jpeg",
+  observations: "https://images.unsplash.com/photo-159742324403d-d19504ba2b3b?auto=format&fit=crop&q=80&w=800",
+  limitations: "https://images.unsplash.com/photo-1516339901600-2e1a62dc0c45?auto=format&fit=crop&q=80&w=800",
+  confusions: "https://images.unsplash.com/photo-1503387762-592dea58ef21?auto=format&fit=crop&q=80&w=800",
+  transition: "/assets/images/IMG_20260414_220521_354.jpg",
+  mendel: "/assets/images/IMG_20260414_220521_354.jpg",
+  conclusion: "/assets/images/photo-1507413245164-6160d8298b31.jpeg",
 };
 
 export const NarrativeSection: React.FC<NarrativeSectionProps> = ({ sectionKey, index }) => {
@@ -44,11 +44,11 @@ export const NarrativeSection: React.FC<NarrativeSectionProps> = ({ sectionKey, 
       </div>
 
       <div className={`relative h-[400px] md:h-[600px] bg-stone-900/50 rounded-lg overflow-hidden border border-stone-800 flex items-center justify-center ${index % 2 === 0 ? "order-2" : "order-2 md:order-1"}`}>
-        <div className="absolute inset-0 opacity-40 section-bg">
+        <div className="absolute inset-0 opacity-70 section-bg group hover:opacity-100 transition-opacity duration-700">
           <img
             src={imageUrl}
             alt={t.title}
-            className="w-full h-full object-cover sepia-[.3] contrast-[1.1]"
+            className="w-full h-full object-cover sepia-[.2] contrast-[1.1] grayscale-[0.2]"
           />
         </div>
         <div className="relative z-10 p-12 text-center">
