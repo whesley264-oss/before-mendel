@@ -3,6 +3,7 @@
 import { ScrollSection } from "@/components/sections/ScrollSection";
 import { Intro } from "@/components/sections/Intro";
 import { NarrativeSection } from "@/components/sections/NarrativeSection";
+import { CarouselSection } from "@/components/sections/CarouselSection";
 import { DepthSection } from "@/components/sections/DepthSection";
 import { useLanguageStore } from "@/lib/i18n/store";
 import { translations } from "@/lib/i18n/translations";
@@ -17,17 +18,13 @@ export default function Home() {
     'preScientific',
     'observations',
     'limitations',
-    'confusions',
-    'transition'
   ] as const;
 
-  const thanksText = {
-    pt: "Obrigado a todos pela atenção!",
-    en: "Thank you all for your attention!",
-    es: "¡Gracias a todos por su atención!",
-    it: "Grazie a tutti por l'attenzione!",
-    zh: "感谢大家的关注！"
-  };
+  const carouselImages = [
+    "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=800",
+    "https://images.unsplash.com/photo-1503387762-592dea58ef21?auto=format&fit=crop&q=80&w=800",
+    "https://images.unsplash.com/photo-1516339901600-2e1a62dc0c45?auto=format&fit=crop&q=80&w=800",
+  ];
 
   return (
     <main className="bg-black text-foreground relative overflow-hidden">
@@ -50,6 +47,16 @@ export default function Home() {
         </ScrollSection>
       ))}
 
+      {/* Cinematic Carousel for Transition & Confusions */}
+      <CarouselSection
+        sectionKey="transition"
+        images={carouselImages}
+      />
+
+      <ScrollSection id="confusions" className="bg-black/20">
+        <NarrativeSection sectionKey="confusions" index={7} />
+      </ScrollSection>
+
       {/* Depth Section for Mendel - The Turning Point */}
       <DepthSection id="mendel">
         <div className="depth-layer absolute inset-0 flex items-center justify-center opacity-10">
@@ -68,19 +75,42 @@ export default function Home() {
         <NarrativeSection sectionKey="conclusion" index={9} />
       </ScrollSection>
 
-      {/* Final Message */}
-      <ScrollSection id="thanks" className="bg-black">
-        <motion.div
-          className="text-center section-content"
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.5 }}
-        >
-          <h2 className="text-4xl md:text-7xl font-serif text-accent mb-4">
-            {thanksText[language as keyof typeof thanksText]}
-          </h2>
-          <div className="w-24 h-[1px] bg-accent/40 mx-auto mt-8" />
-        </motion.div>
+      {/* Final Message - Cinematic Credits Style */}
+      <ScrollSection id="thanks" className="bg-black py-40">
+        <div className="flex flex-col items-center justify-center min-h-[60vh] text-center px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 2, ease: "easeOut" }}
+            className="mb-20"
+          >
+            <span className="text-accent uppercase tracking-[1em] text-[10px] mb-8 block opacity-50">Fim da Experiência</span>
+            <h2 className="text-5xl md:text-8xl font-serif text-white mb-6 tracking-tighter">
+               {(translations[language as keyof typeof translations] as any).thanks}
+            </h2>
+            <div className="w-32 h-[1px] bg-gradient-to-r from-transparent via-accent to-transparent mx-auto" />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 2 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-4xl w-full border-t border-white/5 pt-20"
+          >
+            <div>
+              <h4 className="text-accent text-[10px] uppercase tracking-[0.3em] mb-4">Direção e Design</h4>
+              <p className="text-white/60 font-serif italic">Whesley, Raul, Adriano, Eduardo</p>
+            </div>
+            <div>
+              <h4 className="text-accent text-[10px] uppercase tracking-[0.3em] mb-4">Instituição</h4>
+              <p className="text-white/60 font-serif italic">Colégio Paulo Magalhães</p>
+            </div>
+            <div>
+              <h4 className="text-accent text-[10px] uppercase tracking-[0.3em] mb-4">Orientação</h4>
+              <p className="text-white/60 font-serif italic">Prof. Jaimilton</p>
+            </div>
+          </motion.div>
+        </div>
       </ScrollSection>
 
       {/* Footer */}

@@ -88,19 +88,13 @@ export const Intro = () => {
         className="w-full max-w-4xl mt-8"
       >
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-          {[
-            { id: "01", label: "Contexto", desc: "A origem do pensamento" },
-            { id: "02", label: "Filosofia", desc: "Hipócrates e Aristóteles" },
-            { id: "03", label: "Teorias", desc: "Pré-formismo e Epigênese" },
-            { id: "04", label: "Mendel", desc: "A revolução científica" },
-            { id: "05", label: "Conclusão", desc: "O legado eterno" }
-          ].map((item, i) => (
+          {(t as any).summary.map((item: any, i: number) => (
             <motion.div
-              key={item.id}
+              key={i}
               whileHover={{ y: -5, backgroundColor: "rgba(var(--accent-rgb), 0.1)" }}
               className="flex flex-col p-4 border border-accent/20 bg-accent/5 rounded-sm transition-all group cursor-default"
             >
-              <span className="text-accent font-bold mb-2 text-xs">{item.id}</span>
+              <span className="text-accent font-bold mb-2 text-xs">0{i + 1}</span>
               <span className="text-white text-[10px] uppercase tracking-widest mb-1 group-hover:text-accent transition-colors font-bold">{item.label}</span>
               <span className="text-[9px] text-stone-500 lowercase italic opacity-0 group-hover:opacity-100 transition-opacity">{item.desc}</span>
             </motion.div>

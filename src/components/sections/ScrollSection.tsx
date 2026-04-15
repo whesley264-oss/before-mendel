@@ -26,12 +26,12 @@ export const ScrollSection: React.FC<ScrollSectionProps> = ({ children, id, clas
         gsap.fromTo(content,
           {
             opacity: 0,
-            y: 50,
+            x: -50,
             filter: 'blur(10px)'
           },
           {
             opacity: 1,
-            y: 0,
+            x: 0,
             filter: 'blur(0px)',
             duration: 1.5,
             ease: 'power3.out',

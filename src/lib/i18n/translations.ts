@@ -3,12 +3,20 @@ export const translations = {
     nav: {
       language: 'Idioma',
     },
+    thanks: "Obrigado a todos pela atenção!",
     sections: {
       intro: {
         title: 'Proto-Genética',
         subtitle: 'A hereditariedade antes de Mendel',
         tagline: 'Como as características eram explicadas antes da genética?',
         content: 'A ciência não nasce pronta. Ela evolui a partir de erros, tentativas e interpretações limitadas. Antes de Mendel, o mundo tentava entender a vida através de sombras e suposições.',
+        summary: [
+          { label: 'Contexto', desc: 'A origem do pensamento' },
+          { label: 'Filosofia', desc: 'Hipócrates e Aristóteles' },
+          { label: 'Teorias', desc: 'Pré-formismo e Epigênese' },
+          { label: 'Mendel', desc: 'A revolução científica' },
+          { label: 'Conclusão', desc: 'O legado eterno' }
+        ]
       },
       ancient: {
         title: 'Antes da Ciência',
@@ -61,12 +69,20 @@ export const translations = {
     nav: {
       language: 'Language',
     },
+    thanks: "Thank you all for your attention!",
     sections: {
       intro: {
         title: 'Proto-Genetics',
         subtitle: 'Heredity before Mendel',
         tagline: 'How were traits explained before genetics?',
         content: 'Science is not born ready. It evolves from errors, attempts, and limited interpretations. Before Mendel, the world tried to understand life through shadows and assumptions.',
+        summary: [
+          { label: 'Context', desc: 'Origin of thought' },
+          { label: 'Philosophy', desc: 'Hippocrates & Aristotle' },
+          { label: 'Theories', desc: 'Pre-formism & Epigenesis' },
+          { label: 'Mendel', desc: 'Scientific revolution' },
+          { label: 'Conclusion', desc: 'Eternal legacy' }
+        ]
       },
       ancient: {
         title: 'Before Science',
@@ -119,12 +135,20 @@ export const translations = {
     nav: {
       language: 'Idioma',
     },
+    thanks: "¡Gracias a todos por su atención!",
     sections: {
       intro: {
         title: 'Proto-Genética',
         subtitle: 'La herencia antes de Mendel',
         tagline: '¿Cómo se explicaban las características antes de la genética?',
         content: 'La ciencia no nace terminada. Evoluciona a partir de errores, intentos e interpretaciones limitadas. Antes de Mendel, el mundo intentaba comprender la vida a través de sombras y suposiciones.',
+        summary: [
+          { label: 'Contexto', desc: 'El origen del pensamiento' },
+          { label: 'Filosofía', desc: 'Hipócrates y Aristóteles' },
+          { label: 'Teorías', desc: 'Preformismo y Epigénesis' },
+          { label: 'Mendel', desc: 'Revolución científica' },
+          { label: 'Conclusión', desc: 'Legado eterno' }
+        ]
       },
       ancient: {
         title: 'Antes de la Ciencia',
@@ -177,12 +201,20 @@ export const translations = {
     nav: {
       language: 'Lingua',
     },
+    thanks: "Grazie a tutti per l'attenzione!",
     sections: {
       intro: {
         title: 'Proto-Genetica',
         subtitle: 'L\'ereditarietà prima di Mendel',
         tagline: 'Come venivano spiegate le caratteristiche prima della genetica?',
         content: 'La scienza non nasce pronta. Si evolve da errori, tentativi e interpretazioni limitate. Prima di Mendel, il mondo cercava di capire la vita attraverso ombre e supposizioni.',
+        summary: [
+          { label: 'Contesto', desc: 'L\'origine del pensiero' },
+          { label: 'Filosofia', desc: 'Ippocrate e Aristotele' },
+          { label: 'Teorie', desc: 'Preformismo ed Epigenesi' },
+          { label: 'Mendel', desc: 'Rivoluzione scientifica' },
+          { label: 'Conclusione', desc: 'Eredità eterna' }
+        ]
       },
       ancient: {
         title: 'Prima della Scienza',
@@ -235,12 +267,20 @@ export const translations = {
     nav: {
       language: '语言',
     },
+    thanks: "感谢大家的关注！",
     sections: {
       intro: {
         title: '原生遗传学',
         subtitle: '孟德尔之前的遗传学',
         tagline: '在遗传学出现之前，特征是如何解释的？',
         content: '科学并非生而完善。它从错误、尝试和局限的解释中演变而来。在孟德尔之前，世界试图通过影子和假设来理解生命。',
+        summary: [
+          { label: '背景', desc: '思想的起源' },
+          { label: '哲学', desc: '希波克拉底与亚里士多德' },
+          { label: '理论', desc: '先成论与渐成论' },
+          { label: '孟德尔', desc: '科学革命' },
+          { label: '结论', desc: '永恒的遗产' }
+        ]
       },
       ancient: {
         title: '科学之前',

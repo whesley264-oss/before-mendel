@@ -10,7 +10,7 @@ interface NarrativeSectionProps {
 }
 
 const sectionImages: Record<string, string> = {
-  ancient: "https://images.unsplash.com/photo-1599739291060-4578e77dac5d?auto=format&fit=crop&q=80&w=800", // Greek statues
+  ancient: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=800", // Ancient light/mystical
   philosophers: "https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=800", // Old books
   preScientific: "https://images.unsplash.com/photo-1532187863486-abf9d3c3236e?auto=format&fit=crop&q=80&w=800", // Scientific sketch
   observations: "https://images.unsplash.com/photo-159742324403d-d19504ba2b3b?auto=format&fit=crop&q=80&w=800", // Dried plants
@@ -30,7 +30,7 @@ export const NarrativeSection: React.FC<NarrativeSectionProps> = ({ sectionKey, 
     <div className="section-content grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-6xl w-full">
       <div className={index % 2 === 0 ? "order-1" : "order-1 md:order-2"}>
         <span className="text-accent/60 font-serif italic text-2xl mb-2 block">
-          0{index + 1}
+          {index + 1 < 10 ? `0${index + 1}` : index + 1}
         </span>
         <h2 className="text-4xl md:text-6xl font-serif mb-6 text-foreground leading-tight">
           {t.title}
